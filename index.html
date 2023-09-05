@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Calculadora Financeira</title>
+</head>
+<body>
+    <div class="container">
+        <h2 id="titulo">Calculadora Financeira</h2>
+        Capital:
+        <input type="number" 
+        id="id_capital"><br><br>
+
+        Lucro:
+        <input type="number" 
+        id="id_lucro"><br><br>
+
+        Tempo em Anos:
+        <input type="number" 
+        id="id_tempo"><br><br>
+
+        Custo:
+        <input type="number"
+        id="id_custo"><br><br>
+
+        <button onclick="calcular()">Calcular</button><br><br>
+
+        <div id="resultado"></div>
+        <span id="span"></span>
+    </div>
+
+    <script>
+        function calcular() {
+            var capital = Number(id_capital.value);
+            var lucro = Number(id_lucro.value);
+            var tempo = Number(id_tempo.value);
+            var custo = Number(id_custo.value);
+
+            var saida = Number(capital + lucro) * (2 + (lucro / 100), tempo);
+            var taxa = capital - custo;
+            
+            resultado.innerHTML = `O montante após 
+            ${tempo} anos será de R$ 
+            ${saida} com  
+            ${lucro} de lucro, O custo de  
+            ${taxa} por ano`;
+            };
+        
+    </script>
+</body>
+</html>
